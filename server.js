@@ -3,6 +3,8 @@ const request = require('request');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 8080;
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -56,8 +58,8 @@ app.get('/weather', (request, response) => {
     response.send(weather);
 });
 
-app.listen(8080, () => {
-    console.log('Server is up on the port 8080');
+app.listen(port, () => {
+    console.log('Server is up on the port ${port}');
     request({
         url: 'http://maps.googleapis.com/maps/api/geocode/json' +
             '?address=Leszczynowka',

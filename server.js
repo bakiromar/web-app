@@ -1,3 +1,8 @@
+/*
+ First Web App Application
+ Author: Bakr Al-Humaimidi
+ */
+
 const express = require('express');
 const request = require('request');
 const hbs = require('hbs');
